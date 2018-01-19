@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="zextbase1ModelStoreContainer" CdmEntityContainer="zextbase1Class">
+    <EntitySetMapping Name="notebooks">
+      <EntityTypeMapping TypeName="IsTypeOf(zextbase1Model.notebook)">
+        <MappingFragment StoreEntitySet="notebooks">
+          <ScalarProperty Name="id" ColumnName="notebook_id" />
+          <ScalarProperty Name="notebook_usbs" ColumnName="notebook_usbs" />
+          <ScalarProperty Name="notebook_diagonalsize" ColumnName="notebook_diagonalsize" />
+          <ScalarProperty Name="price" ColumnName="notebook_price" />
+          <ScalarProperty Name="model" ColumnName="notebook_model" />
+          <ScalarProperty Name="firm" ColumnName="notebook_firm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phoneНабор">
+      <EntityTypeMapping TypeName="IsTypeOf(zextbase1Model.phone)" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <MappingFragment StoreEntitySet="phones">
+          <ScalarProperty Name="price" ColumnName="phone_price" />
+          <ScalarProperty Name="model" ColumnName="phone_model" />
+          <ScalarProperty Name="firm" ColumnName="phone_firm" />
+          <ScalarProperty Name="id" ColumnName="phone_id" />
+          <ScalarProperty Name="phone_sim" ColumnName="phone_sim" />
+          <ScalarProperty Name="phone_battery" ColumnName="phone_battery" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

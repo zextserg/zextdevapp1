@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="zextbase1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="zextbase1ModelStoreContainer">
+    <EntitySet Name="notebooks" EntityType="zextbase1Model.Store.notebooks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="phones" EntityType="zextbase1Model.Store.phones" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="notebooks">
+    <Key>
+      <PropertyRef Name="notebook_id" />
+    </Key>
+    <Property Name="notebook_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="notebook_firm" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="notebook_model" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="notebook_price" Type="money" Nullable="false" />
+    <Property Name="notebook_diagonalsize" Type="decimal" Nullable="false" />
+    <Property Name="notebook_usbs" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="phones">
+    <Key>
+      <PropertyRef Name="phone_id" />
+    </Key>
+    <Property Name="phone_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="phone_firm" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="phone_model" Type="nvarchar" Nullable="false" MaxLength="50" StoreGeneratedPattern="None" />
+    <Property Name="phone_price" Type="money" Nullable="false" />
+    <Property Name="phone_battery" Type="int" Nullable="false" />
+    <Property Name="phone_sim" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

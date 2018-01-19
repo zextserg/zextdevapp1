@@ -1,0 +1,4 @@
+D:\dev1\zextdevapp1\zextdevapp1\bin\zextdevapp1.dll
+D:\dev1\zextdevapp1\zextdevapp1\bin\zextdevapp1.pdb
+D:\dev1\zextdevapp1\zextdevapp1\obj\Debug\zextdevapp1.dll
+D:\dev1\zextdevapp1\zextdevapp1\obj\Debug\zextdevapp1.pdb

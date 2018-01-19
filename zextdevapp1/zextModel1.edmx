@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="zextbase1Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="zextbase1ModelStoreContainer">
+          <EntitySet Name="notebooks" EntityType="zextbase1Model.Store.notebooks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="phones" EntityType="zextbase1Model.Store.phones" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="notebooks">
+          <Key>
+            <PropertyRef Name="notebook_id" />
+          </Key>
+          <Property Name="notebook_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="notebook_firm" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="notebook_model" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="notebook_price" Type="money" Nullable="false" />
+          <Property Name="notebook_diagonalsize" Type="decimal" Nullable="false" />
+          <Property Name="notebook_usbs" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="phones">
+          <Key>
+            <PropertyRef Name="phone_id" />
+          </Key>
+          <Property Name="phone_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="phone_firm" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="phone_model" Type="nvarchar" Nullable="false" MaxLength="50" StoreGeneratedPattern="None" />
+          <Property Name="phone_price" Type="money" Nullable="false" />
+          <Property Name="phone_battery" Type="int" Nullable="false" />
+          <Property Name="phone_sim" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="zextbase1Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="zextbase1Class" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="notebooks" EntityType="zextbase1Model.notebook" />
+          <EntitySet Name="phoneНабор" EntityType="zextbase1Model.phone" />
+        </EntityContainer>
+        <EntityType Name="notebook">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firm" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="model" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="notebook_diagonalsize" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="notebook_usbs" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="phone">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firm" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="model" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="phone_battery" Type="Int32" Nullable="false" />
+          <Property Name="phone_sim" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="zextbase1ModelStoreContainer" CdmEntityContainer="zextbase1Class">
+          <EntitySetMapping Name="notebooks">
+            <EntityTypeMapping TypeName="IsTypeOf(zextbase1Model.notebook)">
+              <MappingFragment StoreEntitySet="notebooks">
+                <ScalarProperty Name="id" ColumnName="notebook_id" />
+                <ScalarProperty Name="notebook_usbs" ColumnName="notebook_usbs" />
+                <ScalarProperty Name="notebook_diagonalsize" ColumnName="notebook_diagonalsize" />
+                <ScalarProperty Name="price" ColumnName="notebook_price" />
+                <ScalarProperty Name="model" ColumnName="notebook_model" />
+                <ScalarProperty Name="firm" ColumnName="notebook_firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phoneНабор">
+            <EntityTypeMapping TypeName="IsTypeOf(zextbase1Model.phone)" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+              <MappingFragment StoreEntitySet="phones">
+                <ScalarProperty Name="price" ColumnName="phone_price" />
+                <ScalarProperty Name="model" ColumnName="phone_model" />
+                <ScalarProperty Name="firm" ColumnName="phone_firm" />
+                <ScalarProperty Name="id" ColumnName="phone_id" />
+                <ScalarProperty Name="phone_sim" ColumnName="phone_sim" />
+                <ScalarProperty Name="phone_battery" ColumnName="phone_battery" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="zextModel1" ZoomLevel="95">
+        <EntityTypeShape EntityType="zextbase1Model.notebook" Width="1.5" PointX="0.75" PointY="0.75" Height="2.172587890625" IsExpanded="true" />
+        <EntityTypeShape EntityType="zextbase1Model.phone" Width="1.5" PointX="2.75" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
