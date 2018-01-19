@@ -1,5 +1,5 @@
-﻿<%@ Page Title="О нас" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false"
-    CodeBehind="About.aspx.vb" Inherits="zextdevapp1.About" %>
+﻿<%@ Page Title="О нас" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="About.aspx.cs" Inherits="zextdevapp1.About" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>

@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Выполнить вход" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false"
-    CodeBehind="Login.aspx.vb" Inherits="zextdevapp1.Login" %>
+﻿<%@ Page Title="Выполнить вход" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="Login.aspx.cs" Inherits="zextdevapp1.Account.Login" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>

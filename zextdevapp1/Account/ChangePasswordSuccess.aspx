@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Смена пароля" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false"
-    CodeBehind="ChangePasswordSuccess.aspx.vb" Inherits="zextdevapp1.ChangePasswordSuccess" %>
+﻿<%@ Page Title="Смена пароля" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
+    CodeBehind="ChangePasswordSuccess.aspx.cs" Inherits="zextdevapp1.Account.ChangePasswordSuccess" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
